@@ -20,6 +20,10 @@ class LoginPage(BasePage):
         """点击确定弹框方法"""
         self.click_function(self.find_element_function(page.alert))
 
+    def  nickname_text(self):
+        """获取用户昵称信息"""
+        return self.find_element_function(page.nickname).text
+
     def login_function(self,username,password):
             """登录定位统一方法"""
             self.input_user(username) # 用户

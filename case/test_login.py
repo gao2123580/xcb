@@ -13,7 +13,7 @@ class TestLogin(object):
         self.driver = get_driver()
         self.page_factory = PageFactory(self.driver)# 实例化统一入口类
         yield  # 结束
-        time.sleep(3)
+        # time.sleep(3)
         self.driver.quit() # 关闭驱动对象
 
     def test_login(self):
@@ -24,4 +24,7 @@ class TestLogin(object):
         self.page_factory.my_page().clik_login_link()
         # 输入账号密码
         self.page_factory.login_page().login_function("18739223899","123456")
+        # 断言昵称
+        element = self.page_factory.login_page().nickname_text()
+        assert "用户_4514" in element
 
