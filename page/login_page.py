@@ -21,8 +21,8 @@ class LoginPage(BasePage):
         self.click_function(self.find_element_function(page.alert))
 
     def login_function(self,username,password):
-        """登录定位统一方法"""
-        self.input_user(username) # 用户
-        self.input_pwd(password) # 密码
-        self.click_login_btn() # 登录按钮
-        self.click_alert()# 确定弹框
+            """登录定位统一方法"""
+            self.input_user(username) # 用户
+            self.input_pwd(password) # 密码
+            self.click_login_btn() # 登录按钮
+            self.click_alert()# 确定弹框

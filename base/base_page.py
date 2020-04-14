@@ -6,7 +6,7 @@ class BasePage(object):
     def __init__(self,driver):
         #  封装代码过程中，如果需要驱动对象，直接编写此方法
         self.driver = driver
-    def find_element_function(self,location,timeout=3,poll=.05): # location 为元组类型数据
+    def find_element_function(self,location,timeout=5,poll=.05): # location 为元组类型数据
         """
         元素定位方法
         :param location: 元素定位信息
