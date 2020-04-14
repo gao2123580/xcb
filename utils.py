@@ -17,5 +17,5 @@ def get_driver():
     }
     driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_capabilities=capabilities)
     return driver
-if __name__ == "__main__":
-    get_driver()
+# if __name__ == "__main__":
+# #     get_driver()
