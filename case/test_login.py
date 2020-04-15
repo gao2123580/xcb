@@ -1,12 +1,12 @@
+"""登录测试用例"""
 import time
 import pytest
-
 from page.page_factory import PageFactory
 from utils import get_driver
 
 
 class TestLogin(object):
-    """测试类"""
+    """登录测试类"""
     @pytest.fixture(autouse=True)
     def before_function(self):
         # 获取驱动对象
@@ -22,9 +22,8 @@ class TestLogin(object):
         self.page_factory.index_page().click_my()
         # 点击登录连接跳转登录页面
         self.page_factory.my_page().clik_login_link()
-        # 输入账号密码
+        # 登录
         self.page_factory.login_page().login_function("18739223899","123456")
         # 断言昵称
-        element = self.page_factory.login_page().nickname_text()
+        element = self.page_factory.my_page().nickname_text()
         assert "用户_4514" in element
-

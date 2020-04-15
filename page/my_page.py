@@ -9,3 +9,7 @@ class MyPage(BasePage):
     def clik_login_link(self):
         """点击登录/注册链接方法"""
         self.click_function(self.find_element_function(page.login_link))
+
+    def  nickname_text(self):
+        """获取用户昵称信息"""
+        return self.find_element_function(page.nickname).text

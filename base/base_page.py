@@ -1,4 +1,5 @@
 """PO文件基类"""
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 
@@ -35,3 +36,20 @@ class BasePage(object):
         :return:无
         """
         element.click() # 点击
+
+    def get_toast_function(self,text):
+        """获取toast信息方法"""
+        # 处理传进来的定位信息
+        # xpath ="//*[contains(@text,'再次点击')]"
+        xpath = By.XPATH,"//*[contains(@text,{})]".format(text) # 这里不能写死
+        # 调用当前类中定位方法
+        element = self.find_element_function(xpath)
+        # 返回目标元素的text属性值
+        return element.text
+
+        # 显示等待
+        # element = WebDriverWait(driver, 3, .5) \
+        #     .until(lambda x: x.find_element_by_xpath("//*[contains(@text,'再次点击')]"))
+        # print(element.text)
+
+
