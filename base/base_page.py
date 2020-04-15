@@ -41,7 +41,7 @@ class BasePage(object):
         """获取toast信息方法"""
         # 处理传进来的定位信息
         # xpath ="//*[contains(@text,'再次点击')]"
-        xpath = By.XPATH,"//*[contains(@text,{})]".format(text) # 这里不能写死
+        xpath = By.XPATH,"//*[contains(@text,'{}')]".format(text) # 这里不能写死
         # 调用当前类中定位方法
         element = self.find_element_function(xpath)
         # 返回目标元素的text属性值
