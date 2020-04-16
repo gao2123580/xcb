@@ -25,4 +25,8 @@ class LoginPage(BasePage):
             self.input_user(username) # 用户
             self.input_pwd(password) # 密码
             self.click_login_btn() # 登录按钮
-            self.click_alert()# 确定弹框
+            # self.click_alert()# 确定弹框
+
+    def login_get_toast(self,text):
+        """获取toast控件信息"""
+        return self.get_toast_function(text) # 获取text属性值需要返回值
